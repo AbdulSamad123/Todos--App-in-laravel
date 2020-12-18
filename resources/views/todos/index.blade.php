@@ -31,8 +31,14 @@ Todo list
             <li class="list-group-item">
   
               {{ $todo->name }} 
-              
-             <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm" style="float:right;">View</a> 
+
+             @if(!$todo->completed)
+
+               <a href="/todos/{{ $todo->id }}/complete" class="btn btn-warning btn-sm" style="float:right; color:white;">Complete</a>
+
+             @endif
+
+             <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm" style="float:right; margin-right:5px;">View</a> 
   
             </li>   
   
